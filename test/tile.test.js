@@ -108,4 +108,78 @@ describe('tile class', () => {
 			expect(testTile.hasValue()).toBe(true);
 		});
 	});
+
+	describe('Position-related functionality', () => {
+		test('getPosition returns the position', () => {
+			const testTile = new Tile(5,61);
+
+			expect(testTile.getPosition()).toBe(61);
+		});
+
+		test('getRow returns the appropriate row - 0, first in row', () => {
+			const testTile = new Tile(2, 9);
+
+			expect(testTile.getRow()).toBe(1);
+		});
+
+		test('getRow returns the appropriate row - 4, middle of row', () => {
+			const testTile = new Tile(2, 41);
+
+			expect(testTile.getRow()).toBe(4);
+		});
+
+		test('getRow returns the appropriate row - 7, last of row', () => {
+			const testTile = new Tile(2, 71);
+
+			expect(testTile.getRow()).toBe(7);
+		});
+
+		test('getColumn returns the appropriate column - 0, first in column', () => {
+			const testTile = new Tile(2, 9);
+
+			expect(testTile.getColumn()).toBe(0);
+		});
+
+		test('getColumn returns the appropriate column - 5, middle of column', () => {
+			const testTile = new Tile(2, 41);
+
+			expect(testTile.getColumn()).toBe(5);
+		});
+
+		test('getColumn returns the appropriate column - 8, last of column', () => {
+			const testTile = new Tile(2, 71);
+
+			expect(testTile.getColumn()).toBe(8);
+		});
+
+		test('getSquare returns the appropriate square - 0, first square, first tile', () => {
+			const testTile = new Tile(2, 0);
+
+			expect(testTile.getSquare()).toBe(0);
+		});
+
+		test('getSquare returns the appropriate square - 0, first square, middle tile', () => {
+			const testTile = new Tile(2, 10);
+
+			expect(testTile.getSquare()).toBe(0);
+		});
+
+		test('getSquare returns the appropriate square - 0, first square, last tile', () => {
+			const testTile = new Tile(2, 20);
+
+			expect(testTile.getSquare()).toBe(0);
+		});
+
+		test('getSquare returns the appropriate square - 4, middle square', () => {
+			const testTile = new Tile(2, 41);
+
+			expect(testTile.getSquare()).toBe(4);
+		});
+
+		test('getSquare returns the appropriate square - 8, last square', () => {
+			const testTile = new Tile(2, 71);
+
+			expect(testTile.getSquare()).toBe(8);
+		});
+	});
 });

@@ -13,7 +13,7 @@ class Tile {
 		//this order matters
 		this.position = position;
 		this.setValue(value);
-		this.isGiven = value != null;
+		this.isGiven = (value != null);
 		this.possibleValues = [];
 	}
 
@@ -32,6 +32,15 @@ class Tile {
 
 	getPosition(){
 		return this.position;
+	}
+	getRow(){
+		return Math.floor(this.getPosition() / 9);
+	}
+	getColumn(){
+		return this.getPosition() % 9;
+	}
+	getSquare(){
+		return 3 * Math.floor(this.getRow() / 3) + Math.floor(this.getColumn() / 3);
 	}
 
 	getPossibleValues(){
