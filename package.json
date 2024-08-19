@@ -1,0 +1,16 @@
+{
+  "name": "sudoku",
+  "version": "0.0.1",
+  "description": "Sudoku solver to practice TDD",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "author": "Brad Lybarger",
+  "license": "ISC"
+}
